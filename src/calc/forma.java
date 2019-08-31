@@ -216,7 +216,12 @@ public class forma extends javax.swing.JFrame {
             }
         });
 
-        jButton19.setLabel("R");
+        jButton19.setText("√");
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
 
         jButton20.setLabel("x^2");
         jButton20.addActionListener(new java.awt.event.ActionListener() {
@@ -497,6 +502,16 @@ public class forma extends javax.swing.JFrame {
         // TODO add your handling code here:
         jTextField1.setText("");
     }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        //Raiz cuadrada
+        double resultado;
+        dato1 = jTextField1.getText();
+        if (!dato1.equals("")) {
+            resultado = (float) Math.sqrt(Double.parseDouble(dato1));
+            jTextField1.setText(String.valueOf(resultado));
+        }
+    }//GEN-LAST:event_jButton19ActionPerformed
 
     public static String calcular(String dato1, String dato2, String operacion) {
         Double resultado = 0.0;
